@@ -7,12 +7,13 @@ using namespace std;
 bool isArmstrong(int number)
 {
     int sum = 0;
+    int copy = number;
     do {
         int digit = number % 10;
         sum += digit*digit*digit;
         number /= 10;
     } while (number);
-    return (sum == number);
+    return (sum == copy);
 }
 
 int main()
@@ -22,6 +23,6 @@ int main()
     cout << "Enter a number to check if Armstrong or not: ";
     cin >> number;
 
-    cout << number << (isArmstrong(number)? " is " : " isn't ");
-    cout << "an Armstrong number." << endl;
+    cout << number << (isArmstrong(number)? " is " : " isn't ")
+         << "an Armstrong number." << endl;
 }

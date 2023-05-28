@@ -7,28 +7,43 @@
 
 using namespace std;
 
+// GCD using Iteration
+int gcdIteration(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b)
+            a -= b;
+        else
+            b -= a;
+    }
+    return a;
+}
+
 // GCD using Euclidean Algorithm (Recursion)
-int gcd(int /* smaller number: */ a, int /* larger number: */ b)
+int gcdRecursive(int /* smaller number: */ a, int /* larger number: */ b)
 {
     int remainder = b % a;
     if (remainder == 0)
         return a;
-    return gcd(remainder, a);
+    return gcdRecursive(remainder, a);
 }
 
 int main()
 {
     int A, B;
-    cout << "Enter two numbers to find the GCD of: " << endl;
+    cout << "Enter two numbers to find the GCD of: ";
     cin >> A >> B;
 
-    // gcd() expects first argument to be smaller, swap before passing if needed
+    // gcdRecursive() expects first argument to be smaller, swap before passing if needed
     if (A > B) { 
         int temp = A;
         A = B;
         B = temp;
     }
-    int G = gcd(A, B);
+
+    // Compute the GCD
+    int G = gcdIteration(A, B);
 
     // LCM * GCD = product of numbers
     int L = (A*B)/G;

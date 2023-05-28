@@ -12,12 +12,13 @@ int factorial(int number)
 bool isPeterson(int number) 
 {
     int sum = 0;
+    int copy = number;
     do {
         int digit = number % 10;
         sum += factorial(digit);
         number /= 10;
     } while (number);
-    return (sum == number);
+    return (sum == copy);
 }
 
 int main()

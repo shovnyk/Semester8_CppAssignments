@@ -10,7 +10,7 @@ int main()
     int y;
     int z;
 
-    cout << "Enter three numbers." << endl;
+    cout << "Enter three numbers: ";
     cin >> x >> y >> z;
 
     int maxXY = x > y ? x : y;

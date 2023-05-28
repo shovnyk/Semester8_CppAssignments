@@ -9,7 +9,7 @@ int main()
     int year;
     bool isLeap;
 
-    cout << "Enter the year: " << endl;
+    cout << "Enter the year: ";
     cin >> year;
 
     isLeap = year % 4 == 0;
